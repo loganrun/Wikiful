@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 development:
   adapter: sqlite3
-  database: wikiful_development
+  database: db/wikiful_development.sqlite3   # <= I changed this 
   encoding: unicode
   user: wikiful
   host: localhost

@@ -1,0 +1,46 @@
+
+
+11/22
+    ran
+        bundle install
+        
+    changed database.yml 
+        database: wikiful_development
+        changed to
+        database: db/wikiful_development.db   # <= I changed this
+        
+    ran rake db:create
+        rake db:migrate
+        
+    ran rake db:seed
+        had problems related to the Article model
+        
+    fixed Article model
+        has_many :articles
+         changed to
+        has_many :article_categories 
+        
+    	has_many :categories, through: :articles_categories
+    	 changed to
+    	 has_many :categories, through: :article_categories  #<= remove extra S
+    	 
+    	 
+ don't want to check in the sqlite db to github
+    changed 
+      db/wikiful_development.db
+     to
+      db/wikiful_development.sqlite3
+     
+     rerun
+        rake db:create && rake db:migrate
+         #             ^ this just means 'run the second thing after the first thing works' 
+        rake db:seed
+
+
+
+
+
+
+
+
+
