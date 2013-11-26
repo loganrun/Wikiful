@@ -5,10 +5,55 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 </head>
 <body>
 
-<%= yield %>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<%= link_to "Wikiful", root_path, :class => "brand" %>
+				<div style="float:right;"> Log oin and out links</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+
+	<div class= "container">
+		<div class= "row">
+			<div class="span9"><%= yield %> </div>
+			<div class="span3 sidebar">
+				<div class="my-wiki-site">
+					<h4>My Wikiful</h4>
+					<ul>
+						<li><%= link_to "Write a Wiki", new_article_path %></li>
+					</ul>
+				</div>
+				<div class="categories-sidebar">
+					<h4>Categories</h4>
+					<ul>
+						<% @categories.each do |category| %>
+
+						<li><%= link_to category.name, category %></li>
+						<% end -%>
+					</ul>
+				
+				</div>
+				<div class="about">
+					<h4>About Wikiful</h4>
+					<p> wlkhefksjdfkjs ajkhfdshfjk ajshfkjshf haskfhshafh ajskfhjksahf</p>
+				</div>
+					
+			
+				
+			</div>
+			
+		</div>
+		
+	</div>
+
 
 </body>
 </html>
