@@ -1,10 +1,11 @@
 class SessionsController < ApplicationController
   def new
   end
+  
   def create
   	user = User.find_by_email(params[:email])
-  	if user &amp;&amp; user.authenticate(params[:password])
-  		seesion[:user_id] = user.user_id
+  	if user && user.authenticate(params[:password])
+  		session[:user_id] = user.id
   		redirect_to root_url, notice: "Logged in"
   	else
   		flash.now.alert = "Email or password is invalid"
@@ -12,10 +13,10 @@ class SessionsController < ApplicationController
   	end
   end
 
-  def destroy
-  	sessions[:user_id] = nil
-  	redirect_to root_url, notice: "Logged Out"
-  end
+  #def destroy
+  #	sessions[:user_id] = nil
+  #	redirect_to root_url, notice: "Logged Out"
+  #end
   
   private
   def current_user
