@@ -8,5 +8,9 @@ class ApplicationController < ActionController::Base
   def get_categories
   	@categories = Category.all.order(:name)
   end
+
+  def authorize
+  	redirect_to login_url, alert: "Not authorized" if current_user.nil?
+  end
   
 end
