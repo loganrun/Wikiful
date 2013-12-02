@@ -9,18 +9,18 @@
 </head>
 <body>
 
-	<div class="navbar navbar-fixed-top">
+	<div class="navbar navbar-fixed-top navbar-inverse">
 		<div class="navbar-inner">
 			<div class="container">
 				<%= link_to "Wikiful", root_path, :class => "brand" %>
 				<div class='session-controls'>
 					<% if current_user %>
-					<%= link_to "Log Out", logout_path, :class => 'btn btn-primary btn-mini' %>
+					<%= link_to "Log Out", logout_path, :class => 'btn btn-primary btn-small' %>
 					Logged in as <%= current_user.email %>
 					<% else %>
-					<div class="btn-group">
-						<%= link_to "Sign Up", signup_path, :class => "btn btn-mini" %>
-						<%= link_to "Log In", login_path, :class => "btn btn-mini" %>
+					<div class="btn-group pull-right">
+						<%= link_to "Sign Up", signup_path, :class => "btn btn-small btn-primary" %>
+						<%= link_to "Log In", login_path, :class => "btn btn-small btn-primary" %>
 					</div>
 					<% end %>
 				</div>
@@ -42,25 +42,34 @@
 			</div>
 			
 		</div>
+		
 		<div class= "row">
+		
 			<div class="span9"><%= yield %> </div>
-			<div class="span3 sidebar">
-				<div class="my-wiki-site">
-					<h4>My Wikiful</h4>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4 class="panel-title">My Wikiful</h4>
+					</div>
+					<div class="panel-body">
 					<ul>
 						<li><%= link_to "Write a Wiki", new_article_path %></li>
 					</ul>
+					</div>
 				</div>
-				<div class="categories-sidebar">
-					<h4>Categories</h4>
+				<div class="panel-heading">
+					<h4 class="panel-title">Categories</h4>
+					</div>
+					<div class="panel-body">
 					<ul>
 						<% @categories.each do |category| %>
 
 						<li><%= link_to category.name, category %></li>
 						<% end -%>
 					</ul>
+					</div>
 				
 				</div>
+				
 				<div class="about">
 					<h4>About Wikiful</h4>
 					<p> wlkhefksjdfkjs ajkhfdshfjk ajshfkjshf haskfhshafh ajskfhjksahf</p>
