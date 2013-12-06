@@ -35,6 +35,11 @@
         rake db:create && rake db:migrate
          #             ^ this just means 'run the second thing after the first thing works' 
         rake db:seed
+        
+
+to run server in CP rails s -p $PORT -b $IP
+ Alias to run server is r_s
+to make alias
 
 
 

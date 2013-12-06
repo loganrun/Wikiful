@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Wikiful</title>
+  <title>Wikiful- What Do You Want To Learn Today?</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -9,16 +9,19 @@
 </head>
 <body>
 
-	<div class="navbar navbar-fixed-top navbar-inverse">
+	<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
 		<div class="navbar-inner">
 			<div class="container">
 				<%= link_to "Wikiful", root_path, :class => "brand" %>
+				<%= link_to "Articles", articles_path, :class => 'btn btn-primary btn-small'  %>
+			
+			
 				<div class='session-controls'>
 					<% if current_user %>
 					<%= link_to "Log Out", logout_path, :class => 'btn btn-primary btn-small' %>
 					Logged in as <%= current_user.email %>
 					<% else %>
-					<div class="btn-group pull-right">
+					<div class="btn-group">
 						<%= link_to "Sign Up", signup_path, :class => "btn btn-small btn-primary" %>
 						<%= link_to "Log In", login_path, :class => "btn btn-small btn-primary" %>
 					</div>
@@ -46,35 +49,35 @@
 		<div class= "row">
 		
 			<div class="span9"><%= yield %> </div>
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<h4 class="panel-title">My Wikiful</h4>
-					</div>
-					<div class="panel-body">
-					<ul>
-						<li><%= link_to "Write a Wiki", new_article_path %></li>
-					</ul>
-					</div>
-				</div>
-				<div class="panel-heading">
-					<h4 class="panel-title">Categories</h4>
-					</div>
-					<div class="panel-body">
-					<ul>
-						<% @categories.each do |category| %>
-
-						<li><%= link_to category.name, category %></li>
-						<% end -%>
-					</ul>
-					</div>
-				
-				</div>
-				
-				<div class="about">
-					<h4>About Wikiful</h4>
-					<p> wlkhefksjdfkjs ajkhfdshfjk ajshfkjshf haskfhshafh ajskfhjksahf</p>
-				</div>
-					
+    			<div class="panel panel-primary col-xs-6 col-sm-3">
+    				<div class="panel-heading">
+    					<h4 class="panel-title">My Wikiful</h4>
+    					</div>
+    					<div class="panel-body">
+    					<ul>
+    						<li><%= link_to "Write a Wiki", new_article_path %></li>
+    					</ul>
+    					</div>
+    				</div>
+    				<div class="panel-heading">
+    					<h4 class="panel-title">Categories</h4>
+    					</div>
+    					<div class="panel-body">
+    					<ul>
+    						<% @categories.each do |category| %>
+    
+    						<li><%= link_to category.name, category %></li>
+    						<% end -%>
+    					</ul>
+    					</div>
+    				
+    				</div>
+    				
+    				<div class="panel-body">
+    					<h4 class="panel-title">About Wikiful</h4>
+    					<p> wlkhefksjdfkjs ajkhfdshfjk ajshfkjshf haskfhshafh ajskfhjksahf</p>
+    				</div>
+				</div>	
 			
 				
 			</div>
