@@ -13,7 +13,7 @@
 		<div class="navbar-inner">
 			<div class="container">
 				<%= link_to "Wikiful", root_path, :class => "brand" %>
-				<%= link_to "Articles", articles_path, :class => 'btn btn-primary btn-small'  %>
+				
 			
 			
 				<div class='session-controls'>
@@ -22,6 +22,8 @@
 					Logged in as <%= current_user.email %>
 					<% else %>
 					<div class="btn-group">
+					    <%= link_to "Articles", articles_path, :class => 'btn btn-primary btn-small'  %>
+				        <%= link_to "Categories", categories_path, :class => 'btn btn-primary btn-small'  %>
 						<%= link_to "Sign Up", signup_path, :class => "btn btn-small btn-primary" %>
 						<%= link_to "Log In", login_path, :class => "btn btn-small btn-primary" %>
 					</div>
@@ -54,8 +56,8 @@
     					<h4 class="panel-title">My Wikiful</h4>
     					</div>
     					<div class="panel-body">
-    					<ul>
-    						<li><%= link_to "Write a Wiki", new_article_path %></li>
+    					<ul class="list-unstyled">
+    						<li="list-unstyled"><%= link_to "Write a Wiki", new_article_path %></li>
     					</ul>
     					</div>
     				</div>
@@ -63,7 +65,7 @@
     					<h4 class="panel-title">Categories</h4>
     					</div>
     					<div class="panel-body">
-    					<ul>
+    					<ul class="list-unstyled">
     						<% @categories.each do |category| %>
     
     						<li><%= link_to category.name, category %></li>
