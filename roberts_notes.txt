@@ -43,6 +43,9 @@ to make alias
 
 
 
+in welcome controller
+skip_before_filter :get_categories
+  layout 'welcome'
 
 
 
