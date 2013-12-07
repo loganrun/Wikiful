@@ -12,11 +12,12 @@
 		ul li{
 			list-style: none;
 			overflow: hidden;
-			height: 652px;
-			position: relative;
+			height: 602px;
+			position: absolute;
 		}
 		.parallax-background {
 			height:652px;
+			position: relative;
 		}
 		.architecture {
 			background-image:url(https://dl.dropboxusercontent.com/u/83407479/architecture.png);
@@ -60,36 +61,46 @@
 		
 	</style>
 	
-	
+	</style>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/stellar.js"></script>
+		<script>
+		$(function(){
+			$.stellar({
+				horizontalScrolling: false,
+				verticalOffset: 50
+			});
+		});
+		</script>
 
 
 	<ul class="parallax">
 		<li>
-			<div class="parallax-background architecture"></div>
+			<div class="parallax-background architecture" data-stellar-background-ratio="0.5"></div>
 			<div class="subcontent">
 				<h1> ARCHITECTURE</h1>
 			</div>
 		</li>
 		<li>
-			<div class="parallax-background chemistry"></div>
+			<div class="parallax-background chemistry" data-stellar-background-ratio="0.5"></div>
 			<div class="subcontent">
 				<h1> CHEMISTRY</h1>
 			</div>
 		</li>
 		<li>
-			<div class="parallax-background history"></div>
+			<div class="parallax-background history" data-stellar-background-ratio="0.5"></div>
 			<div class="subcontent">
 				<h1> HISTORY</h1>
 			</div>
 		</li>
 		<li>
-			<div class="parallax-background liteature"></div>
+			<div class="parallax-background liteature" data-stellar-background-ratio="0.5"></div>
 			<div class="subcontent">
 				<h1> LITERATURE</h1>
 			</div>
 		</li>
 		<li>
-			<div class="parallax-background physics"></div>
+			<div class="parallax-background physics" data-stellar-background-ratio="0.5"></div>
 			<div class="subcontent">
 				<h1> PHYSICS</h1>
 			</div>
